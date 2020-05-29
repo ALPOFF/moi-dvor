@@ -6,6 +6,7 @@ import ChannelDialogs from "./components/Channel/ChannelDialogs/ChannelDialogs";
 import SelectedDialog from "./components/Channel/SelectedDialog/SelectedDialog";
 import {Route} from "react-router-dom";
 import BodyContainer from "./components/Channel/BodyContainer";
+import NeighborsContainer from "./components/Neighbors/NeighborsContainer";
 
 const App = () => {
     const [channelList, setChannelList] = useState([]);
@@ -28,7 +29,7 @@ const App = () => {
         <div className="AppContainer">
             <Header/>
             <Route path='/messages' render={() => <BodyContainer/>}/>
-            <Route path='/neighbors' render={() => <div><h1>dfsdfds</h1></div>}/>
+            <Route path='/neighbors' render={() => <NeighborsContainer/>}/>
         </div>
     )
 };

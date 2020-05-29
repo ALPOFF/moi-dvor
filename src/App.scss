@@ -1,0 +1,27 @@
+$bg_color: #FAFAFA;
+
+body {
+    background-color: $bg_color;
+    margin: 0;
+    padding: 0;
+
+    h1, h2, h3, h4, h5 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .AppContainer {
+        display: flex;
+        flex-direction: column;
+
+        .Channel {
+            display: flex;
+            flex-direction: row;
+
+            .ChannelItem {
+                margin: 0 20px;
+            }
+        }
+    }
+}
+

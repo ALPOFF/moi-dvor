@@ -20,10 +20,13 @@
     }
 
     li:hover {
-        background-color: rgb(221, 221, 221);
+        background-color: #dddddd;
+        cursor: pointer;
     }
 
-
+    .current {
+        background-color: #dddddd;
+    }
 
 
 }

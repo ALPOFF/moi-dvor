@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import {NavLink} from "react-router-dom";
 
 let chnlist = [
@@ -19,6 +20,16 @@ const Channel = () => {
             {chnlist.map(c => <NavLink to={"/dialogs/" + c.ch_id}>
                 <div style={{margin: '20px'}}>{c.ch_title}</div>
             </NavLink>)}
+=======
+import ChannelList from "./ChannelList/ChannelList";
+import './Channel.scss'
+
+const Channel = () => {
+    return (
+        <div className="channel">
+            <h4>Каналы</h4>
+            <ChannelList/>
+>>>>>>> e5290dfc301f6e9ed0ed0583c4ac35fe60972551
         </div>
     )
 };

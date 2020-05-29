@@ -6,6 +6,7 @@ const App = () => (
     <div>
       <h1>hi</h1>
       <CustomComp />
+      
     </div>
 );
 

@@ -14,7 +14,7 @@ const Channel = () => {
         <div>
             <h4>Channels</h4>
             <ol>
-            {chnlist.map(c => <NavLink to={"/dialogs/" + c.ch_id}>
+            {chnlist.map(c => <NavLink to={"/messages/dialogs/" + c.ch_id}>
                 <li style={{margin: '20px'}}>{c.ch_title}</li>
             </NavLink>)}
             </ol>

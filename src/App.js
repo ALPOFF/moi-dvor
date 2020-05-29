@@ -5,6 +5,7 @@ import Channel from "./components/Channel/Channel";
 import ChannelDialogs from "./components/Channel/ChannelDialogs/ChannelDialogs";
 import SelectedDialog from "./components/Channel/SelectedDialog/SelectedDialog";
 import {Route} from "react-router-dom";
+import BodyContainer from "./components/Channel/BodyContainer";
 
 const App = () => {
     const [channelList, setChannelList] = useState([]);
@@ -26,11 +27,8 @@ const App = () => {
     return (
         <div className="AppContainer">
             <Header/>
-            <div className="Channel">
-                <Route path='/' render={() => <div className="ChannelItem" style={{flex: 1}}><Channel/></div>}/>
-                <Route path='/dialogs/:channelId?/' render={() => <div className="ChannelItem" style={{flex: 2}}><ChannelDialogs/></div>}/>
-                <Route path='/dialogs/channelId/:dialogId?' render={() => <div className="ChannelItem" style={{flex: 2}}><SelectedDialog/></div>}/>
-            </div>
+            <Route path='/messages' render={() => <BodyContainer/>}/>
+            <Route path='/neighbors' render={() => <div><h1>dfsdfds</h1></div>}/>
         </div>
     )
 };

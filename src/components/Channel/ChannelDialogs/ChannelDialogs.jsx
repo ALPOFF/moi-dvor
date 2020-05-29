@@ -16,7 +16,7 @@ const ChannelDialogs = () => {
     return (
         <div>
             <h4>Channel dialog Title</h4>
-            {chndlg.map(c => <NavLink to={"/dialogs/channelId/" + c.chndlg_id}>
+            {chndlg.map(c => <NavLink to={"/messages/dialogs/channelId/" + c.chndlg_id}>
                 <div style={{margin: '20px'}}>{c.chndlg_title}</div>
             </NavLink>)}
         </div>

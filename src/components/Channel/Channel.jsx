@@ -1,10 +1,11 @@
 import React from "react";
 import ChannelList from "./ChannelList/ChannelList";
+import './Channel.scss'
 
 const Channel = () => {
     return (
-        <div>
-            <h4>Channels</h4>
+        <div className="channel">
+            <h4>Каналы</h4>
             <ChannelList/>
         </div>
     )

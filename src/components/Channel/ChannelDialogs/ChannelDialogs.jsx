@@ -52,7 +52,7 @@ class ChannelDialogs extends Component {
 
                     <main className="threads-list">
                         <div className="thread-list-item">
-                            {this.state.chndlg.map(c => <NavLink to={"/channels/dialogs/channelId/" + c.id}>
+                            {this.state.chndlg.map(c => <NavLink to={"/channels/dialogs/" + c.id}>
                                 <div className="thread-item-title" style={{margin: '20px'}}><h4>{c.name}</h4></div>
                                 <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
                                     atque magni quos deleniti quae dolor et aliquam. Sequi ipsam soluta explicabo quas,

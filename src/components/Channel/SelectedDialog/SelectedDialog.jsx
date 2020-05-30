@@ -8,33 +8,34 @@ class SelectedDialog extends Component {
         super(props);
         this.state = {
             chndlg: [],
-            dialog_id: null
+            dialogId: null
         };
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        let dialog_id = this.props.match.params.dialog_id;
-        console.log(this.state.dialog_id)
-        console.log(dialog_id)
-        if (this.props.match.params.dialog_id !== this.state.dialog_id) {
-            axios.get(`http://185.12.95.84:4444/dialogs/${dialog_id}`).then(u => {
+        let dialogId = this.props.match.params.dialogId;
+        console.log(this.state.dialogId)
+        console.log(dialogId)
+        if (this.props.match.params.dialogId !== this.state.dialogId) {
+            axios.get(`http://185.12.95.84:4444/dialogs/${dialogId}`).then(u => {
                 console.log('dialog here:', u.data);
                 this.setState({chndlg: u.data})
-                this.setState({dialog_id: this.props.match.params.dialog_id})
+                this.setState({dialogId: this.props.match.params.dialogId})
             })
         }
     }
 
     componentDidMount() {
-        let dialog_id = this.props.match.params.dialog_id;
-        this.setState({dialog_id: dialog_id})
-        console.log(dialog_id);
-        axios.get(`http://185.12.95.84:4444/dialogs/${dialog_id}`).then(u => {
+        let dialogId = this.props.match.params.dialogId;
+        this.setState({dialogId: dialogId})
+        console.log(dialogId);
+        axios.get(`http://185.12.95.84:4444/dialogs/${dialogId}`).then(u => {
             console.log('dialog here:', u.data);
             this.setState({chndlg: u.data})
             console.log(this.state.chndlg)
         })
     }
+
     render() {
         return (
             <div className="dialog-tab-wrapper">
@@ -65,9 +66,10 @@ class SelectedDialog extends Component {
                         </div>
                         <div className="message-appendix">
                             <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, tempora accusamus, ipsa
-                                earum soluta atque suscipit fugit quas culpa dolorum mollitia dolore quidem praesentium
-                                neque veritatis dicta expedita officia laudantium.
+                                {this.state.chndlg.map(m => <div>
+                                     {m.message}
+                                     {m.datetime}
+                                </div>)}
                             </p>
                         </div>
                     </div>

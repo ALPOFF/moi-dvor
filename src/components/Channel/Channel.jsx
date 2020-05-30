@@ -32,7 +32,7 @@ const Channel = () => {
                 </header>
                 <List className="channel" style={{ width: '300px' }}>
 
-                    {chnlist.map(c => <NavLink  to={"/channels/dialogs/" + c.id}>
+                    {chnlist.map(c => <NavLink  to={"/channels/" + c.id}>
                         <ListItem  style={{margin: '25px 0'}} className="menu-item">
                             <ListItemContent><span style={{ color: c.color, padding: '10px 20px' }}>#</span>{c.name}</ListItemContent>
                         </ListItem>

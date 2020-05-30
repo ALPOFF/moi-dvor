@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/src/components/Channel/Channel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/Channel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Channel/ChannelDialogs/ChannelDialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/ChannelDialogs/ChannelDialogs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Channel/SelectedDialog/SelectedDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/SelectedDialog/SelectedDialog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

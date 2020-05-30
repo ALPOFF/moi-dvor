@@ -22,6 +22,15 @@ body {
                 margin: 0 20px;
             }
         }
+
+        .Neighbor {
+            display: flex;
+            flex-direction: row;
+
+            .NeighborItem {
+                margin: 0 20px;
+            }
+        }
     }
 }
 

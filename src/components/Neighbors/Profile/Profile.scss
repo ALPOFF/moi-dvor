@@ -1,6 +1,6 @@
 .photo {
-    width: 132px;
-    height: 132px;
+    width: 200px;
+    height: 200px;
     //margin: 0 auto;
     overflow: hidden;
     border-radius: 50%;
@@ -10,4 +10,41 @@
     width: auto;
     height: 100%;
     margin: 0 auto;
+}
+
+.profileWrapper {
+    border: 1px solid lightgrey;
+    background-color: white;
+    height: 100%;
+    padding: 40px 0 0 80px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    .info_bio {
+        display: flex;
+        flex-direction: column;
+        h4 {
+            color: #8D8D8D;
+            padding-bottom: 30px;
+        }
+        .Interes {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            h4 {
+                padding-bottom: 0;
+            }
+        }
+    }
+    .msg {
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 40px 0 40px 0;
+        width: 110px;
+        color: #8D8D8D;
+    }
 }

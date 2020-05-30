@@ -24,13 +24,10 @@ body {
         height: 100%;
         display: flex;
         flex-direction: column;
-        height: 100%;
 
         .Channel {
-            padding-top: 40px;
             display: flex;
             flex-direction: row;
-            height: 100%;
             width: 100%;
 
             .ChannelItem {
@@ -38,8 +35,6 @@ body {
                 padding: 20px;
             }
         }
-
-
 
         .Neighbor {
             display: flex;

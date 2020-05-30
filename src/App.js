@@ -17,8 +17,8 @@ const App = () => {
             <Header/>
             <Route path='/messages' render={() => <BodyContainer/>}/>
             <div className="Channel">
-            <Route path='/neighbors' render={() => <NeighborsContainer/>}/>
-            <Route path='/neighbors/profile/:userId?/' render={() => <Profile/>}/>
+                <Route path='/neighbors' render={() => <NeighborsContainer/>}/>
+                <Route path='/neighbors/profile/:userId?/' render={() => <Profile/>}/>
             </div>
         </div>
     )

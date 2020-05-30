@@ -17,7 +17,7 @@ const Channel = () => {
         <div>
 
             <h4>Channels</h4>
-            <List style={{ width: '300px' }}>
+            <List className="channel" style={{ width: '300px' }}>
                 
                 {chnlist.map(c => <NavLink  to={"/messages/dialogs/" + c.ch_id}>
                     <ListItem className="menu-item">

@@ -30,7 +30,7 @@ const Header = () => {
                 </NavLink>
             </div>
             <div className="user-profile-wrapper">
-                <NavLink className="nav-item header-element profile-container" to="/profile">  
+                <NavLink className="nav-item header-element profile-container" to="/bell">  
                     <img className="inline-block ding-dong" src={bell} width="30" alt=""/>
 
                 </NavLink>

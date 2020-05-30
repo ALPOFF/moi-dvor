@@ -7,9 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
-  min-height: 100vh;
-}
 
 body, html {
   height: 100%;
@@ -23,6 +20,7 @@ code {
 
 .menu-item {
   margin: 10px 0;
+  
 }
 
 .menu-item:hover {

@@ -23,8 +23,14 @@ code {
   
 }
 
+ul, ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .menu-item:hover {
-  background-color: #eeeeee;
+  // background-color: #eeeeee;
 }
 
 .nav-item{
@@ -37,4 +43,10 @@ code {
 
 .nav-item:hover {
   background-color: rgb(189, 199, 95);
+}
+
+// Colors
+
+.dodogerblue {
+  color: dodgerblue;
 }

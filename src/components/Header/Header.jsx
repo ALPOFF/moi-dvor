@@ -1,27 +1,45 @@
 import React from "react";
 import './Header.scss'
 import {NavLink} from "react-router-dom";
+import threads from '../../assets/images/header-images/threads.png';
+import neighbors from '../../assets/images/header-images/neighbors.png';
+import messages from '../../assets/images/header-images/messages.png';
+import search from '../../assets/images/header-images/search.png';
+import bell from '../../assets/images/header-images/bell.png';
 
 const Header = () => {
     return (
         <div className="header">
-            <NavLink className="nav-item header-element" to="/channels">  
-                <img className="inline-block" src="https://weboverhauls.github.io/demos/svg/checkmark.svg" width="30" alt=""/>
-                <div className="inline-block">Каналы</div>
-            </NavLink>
-            <NavLink className="nav-item header-element" to="/neighbors">  
-                <img className="inline-block" src="https://weboverhauls.github.io/demos/svg/checkmark.svg" width="30" alt=""/>
-                <div className="inline-block">Соседи</div>
-            </NavLink>
-            <NavLink className="nav-item header-element" to="/messages">  
-                <img className="inline-block" src="https://weboverhauls.github.io/demos/svg/checkmark.svg" width="30" alt=""/>
-                <div className="inline-block">Сообщения</div>
-            </NavLink>
+            <div className="tabs-wrapper">
+                <NavLink className="nav-item header-element" to="/channels">  
+                    <img className="inline-block" src={threads} width="30" alt=""/>
+                    <div className="inline-block">Каналы</div>
+                </NavLink>
+                <NavLink className="nav-item header-element" to="/neighbors">  
+                    <img className="inline-block" src={neighbors} width="30" alt=""/>
+                    <div className="inline-block">Соседи</div>
+                </NavLink>
+                <NavLink className="nav-item header-element" to="/messages">  
+                    <img className="inline-block" src={messages} width="30" alt=""/>
+                    <div className="inline-block">Сообщения</div>
+                </NavLink>
 
-            <NavLink className="nav-item header-element" to="/search">  
-                <img className="inline-block" src="https://weboverhauls.github.io/demos/svg/checkmark.svg" width="30" alt=""/>
-                <div className="inline-block">Поиск</div>
-            </NavLink>
+                <NavLink className="nav-item header-element" to="/search">  
+                    <img className="inline-block" src={search} width="30" alt=""/>
+                    <div className="inline-block">Поиск</div>
+                </NavLink>
+            </div>
+            <div className="user-profile-wrapper">
+                <NavLink className="nav-item header-element profile-container" to="/profile">  
+                    <img className="inline-block ding-dong" src={bell} width="30" alt=""/>
+
+                </NavLink>
+                <NavLink className="nav-item header-element profile-container" to="/profile">  
+                    <div className="inline-block"><div className="circle"><div className="circle-item">A</div></div></div>
+                    <div className="inline-block">Профиль</div>
+                </NavLink>
+            </div>
+
 
         </div>
     )

@@ -1,13 +1,13 @@
 .header {
     display: flex;
     background-color: #D4E157;
+    justify-content: space-between;
     height: 100%;
 }
 
 .header-element {
     border-right: 2px solid white;
     display: flex;
-    border: 1px solid black;
 
     .inline-block {
         align-self: center;
@@ -15,4 +15,41 @@
     }
 }
 
+.tabs-wrapper {
+    display: flex;
+}
 
+.user-profile-wrapper {
+    display: flex;
+
+    .ding-dong{
+
+    }
+
+    .profile-container {
+        display: flex;
+        
+        p {
+            font-size: 20px;
+        }
+
+        .circle {
+            display: flex;
+            justify-content: center;
+            background-color:dodgerblue;
+            color: white;
+            padding: 5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+
+            .circle-item {
+                align-self: center;
+            }
+        }
+    }
+
+    // .profile-image-placeholder {
+    //     justify-content: center;
+    // }
+}

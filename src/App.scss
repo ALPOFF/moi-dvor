@@ -4,6 +4,7 @@ body {
     background-color: $bg_color;
     margin: 0;
     padding: 0;
+    height: 100%;
 
     h1, h2, h3, h4, h5 {
         margin: 0;
@@ -13,10 +14,12 @@ body {
     .AppContainer {
         display: flex;
         flex-direction: column;
+        height: 100%;
 
         .Channel {
             display: flex;
             flex-direction: row;
+            height: 100%;
 
             .ChannelItem {
                 margin: 0 20px;

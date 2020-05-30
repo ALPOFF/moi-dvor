@@ -1,5 +1,61 @@
 .header {
     display: flex;
+<<<<<<< HEAD
     height: 50px;
     background-color: lightblue;
+=======
+    background-color: #D4E157;
+    justify-content: space-between;
+    height: 100%;
+>>>>>>> dev-ilyas
+}
+
+.header-element {
+    border-right: 2px solid white;
+    display: flex;
+
+    .inline-block {
+        align-self: center;
+        padding: 0 10px;
+    }
+}
+
+.tabs-wrapper {
+    display: flex;
+}
+
+.user-profile-wrapper {
+    display: flex;
+
+    .ding-dong{
+
+    }
+
+    .profile-container {
+        display: flex;
+        
+        p {
+            font-size: 20px;
+        }
+
+        .circle {
+            display: flex;
+            justify-content: center;
+            background-color:dodgerblue;
+            border: 2px solid white;
+            color: white;
+            padding: 5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+
+            .circle-item {
+                align-self: center;
+            }
+        }
+    }
+
+    // .profile-image-placeholder {
+    //     justify-content: center;
+    // }
 }

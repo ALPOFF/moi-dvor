@@ -8,10 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body, html {
-  height: 100%;
-  background-color: red;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -20,4 +16,25 @@ code {
 
 #root, html {
   height: 100%;
+}
+
+.menu-item {
+  margin: 10px 0;
+  
+}
+
+.menu-item:hover {
+  background-color: #eeeeee;
+}
+
+.nav-item{
+  text-decoration: none;
+  padding: 18px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-item:hover {
+  background-color: rgb(189, 199, 95);
 }

@@ -11,6 +11,7 @@ const NeighborsContainer = () => {
         {userName: 'Дмитрий Огородников', userId: 3}
     ]
     return (
+<<<<<<< HEAD
         <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
             <div className="myYard">
                 <h3>Мой двор</h3>
@@ -25,6 +26,12 @@ const NeighborsContainer = () => {
                     <div className="navItem">{c.userName}</div>
                 </NavLink>)}
             </div>
+=======
+        <div>
+            {users.map(c => <NavLink className="nav-item" to={"/neighbors/profile/" + c.userId}>
+                <li style={{margin: '20px'}}>{c.userName}</li>
+            </NavLink>)}
+>>>>>>> dev-ilyas
         </div>
     )
 };

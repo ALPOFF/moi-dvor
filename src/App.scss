@@ -4,25 +4,47 @@ body {
     background-color: $bg_color;
     margin: 0;
     padding: 0;
+    height: 100%;
+
+
+    a{
+        text-decoration: none;
+        color: #1e1e1e;
+    }
 
     h1, h2, h3, h4, h5, h6 {
         margin: 0;
         padding: 0;
+    }
+    #root {
+      min-height: 100vh;
     }
 
     .AppContainer {
         height: 100%;
         display: flex;
         flex-direction: column;
+        height: 100%;
 
         .Channel {
+            padding-top: 40px;
             display: flex;
             flex-direction: row;
             height: 100%;
+<<<<<<< HEAD
             .ChannelItem {
 
+=======
+            width: 100%;
+
+            .ChannelItem {
+                margin: 0 0;
+                padding: 20px;
+>>>>>>> dev-ilyas
             }
         }
+
+
 
         .Neighbor {
             display: flex;

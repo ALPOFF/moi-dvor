@@ -6,7 +6,7 @@ class Profile extends Component {
     componentDidMount() {
         let userId = this.props.match.params.userId
         console.log(userId)
-        //запрос для профиля по айди из истории
+        //запрос для профиля по айди из истории*
     }
 
     render() {

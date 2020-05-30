@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './ProfileWindow.scss'
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from "react-mdl";
-// import 'react-mdl/extra/material.css';
+//import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js'
 import ProfileReduxForm from "../ProfileReduxForm";
 

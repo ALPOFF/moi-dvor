@@ -1,7 +1,11 @@
 .header {
     display: flex;
-    background-color: #D4E157;
+    background-color: #A0C476;
     justify-content: space-between;
+    height: 60px;
+    -webkit-box-shadow: 0px 2px 9px -4px rgba(0,0,0,0.88);
+    -moz-box-shadow: 0px 2px 9px -4px rgba(0,0,0,0.88);
+    box-shadow: 0px 2px 9px -4px rgba(0,0,0,0.88);
 }
 
 .header-element {
@@ -27,7 +31,7 @@
 
     .profile-container {
         display: flex;
-        
+
         p {
             font-size: 20px;
         }

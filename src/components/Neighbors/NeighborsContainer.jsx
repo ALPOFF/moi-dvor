@@ -14,12 +14,6 @@ const NeighborsContainer = () => {
         })
     }, []);
 
-    // let users = [
-    //     {userName: 'Ильяс Гарипов', userId: 0},
-    //     {userName: 'Александр Дорохин', userId: 1},
-    //     {userName: 'Валерий Калашников', userId: 2},
-    //     {userName: 'Дмитрий Огородников', userId: 3}
-    // ]
     return (
         <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
             <div className="myYard">

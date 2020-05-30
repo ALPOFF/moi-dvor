@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a15c1ab0-5c99-4dab-b70e-c16f541c32df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Channel/Channel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/Channel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Channel/ChannelDialogs/ChannelDialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/ChannelDialogs/ChannelDialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Channel/SelectedDialog/SelectedDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/SelectedDialog/SelectedDialog.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="a15c1ab0-5c99-4dab-b70e-c16f541c32df" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

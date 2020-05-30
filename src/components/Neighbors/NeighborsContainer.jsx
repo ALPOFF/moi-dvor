@@ -12,7 +12,7 @@ const NeighborsContainer = () => {
     ]
     return (
         <div>
-            {users.map(c => <NavLink to={"/neighbors/profile/" + c.userId}>
+            {users.map(c => <NavLink className="nav-item" to={"/neighbors/profile/" + c.userId}>
                 <li style={{margin: '20px'}}>{c.userName}</li>
             </NavLink>)}
         </div>

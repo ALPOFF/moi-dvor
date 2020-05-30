@@ -19,7 +19,7 @@ const Channel = () => {
             <h4>Channels</h4>
             <List style={{ width: '300px' }}>
                 
-                {chnlist.map(c => <NavLink className="nav-item" to={"/messages/dialogs/" + c.ch_id}>
+                {chnlist.map(c => <NavLink  to={"/messages/dialogs/" + c.ch_id}>
                     <ListItem className="menu-item">
                         <ListItemContent>{c.ch_title}</ListItemContent>
                     </ListItem>
@@ -27,25 +27,7 @@ const Channel = () => {
                 }
 
             </List>
-            {/* <ol>
-                {chnlist.map(c => <NavLink to={"/messages/dialogs/" + c.ch_id}>
-                    <li style={{ margin: '20px' }}>{c.ch_title}</li>
-                </NavLink>)}
-            </ol> */}
-            {/* 
-            <Card shadow={0} style={{ width: '512px', margin: 'auto' }}>
-                <CardTitle style={{ color: '#fff', height: '176px', background: 'url(http://www.getmdl.io/assets/demos/welcome_card.jpg) center / cover' }}>Welcome</CardTitle>
-                <CardText>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris sagittis pellentesque lacus eleifend lacinia...
-            </CardText>
-                <CardActions border>
-                    <Button colored>Get Started</Button>
-                </CardActions>
-                <CardMenu style={{ color: '#fff' }}>
-                    <IconButton name="share" />
-                </CardMenu>
-            </Card> */}
+
 
 
 

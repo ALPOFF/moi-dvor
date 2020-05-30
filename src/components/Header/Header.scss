@@ -7,6 +7,12 @@
 .header-element {
     border-right: 2px solid white;
     display: flex;
+    border: 1px solid black;
+
+    .inline-block {
+        align-self: center;
+        padding: 0 10px;
+    }
 }
 
 

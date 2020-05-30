@@ -9,7 +9,7 @@ const Header = () => {
                 <div>Сообщения</div>
             </NavLink>
 
-            <NavLink class="nav-item" to="/neighbors">
+            <NavLink className="nav-item" to="/neighbors">
                 <div>Соседи</div>
             </NavLink>
         </div>

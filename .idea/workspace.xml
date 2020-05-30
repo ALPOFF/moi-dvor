@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a15c1ab0-5c99-4dab-b70e-c16f541c32df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileReduxForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileWindow/ProfileWindow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileWindow/ProfileWindow.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/configureStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/app-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Neighbors/NeighborsContainer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Neighbors/NeighborsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neighbors/NeighborsContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Neighbors/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neighbors/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Neighbors/Profile/Profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neighbors/Profile/Profile.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +40,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\web\moi-dvor\src\assets\images" />
       <recent name="D:\web\moi-dvor\src\components\CustomComp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -72,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590776547569</updated>
       <workItem from="1590776555754" duration="1721000" />
-      <workItem from="1590787278875" duration="17726000" />
+      <workItem from="1590787278875" duration="22799000" />
     </task>
     <servers />
   </component>

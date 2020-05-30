@@ -5,6 +5,7 @@ import {Route} from "react-router-dom";
 import BodyContainer from "./components/Channel/BodyContainer";
 import NeighborsContainer from "./components/Neighbors/NeighborsContainer";
 import Profile from "./components/Neighbors/Profile";
+import Channel from "./components/Channel/Channel";
 
 const App = () => {
     const [channelList, setChannelList] = useState([]);
@@ -17,8 +18,8 @@ const App = () => {
             <Header/>
             <Route path='/messages' render={() => <BodyContainer/>}/>
             <div className="Channel">
-            <Route path='/neighbors' render={() => <NeighborsContainer/>}/>
-            <Route path='/neighbors/profile/:userId?/' render={() => <Profile/>}/>
+            <Route path='/neighbors' render={() => <div className="ChannelItem" style={{flex: 1}}><NeighborsContainer/></div>}/>
+            <Route path='/neighbors/profile/:userId?/' render={() => <div className="ChannelItem" style={{flex: 5}}><Profile/></div>}/>
             </div>
         </div>
     )

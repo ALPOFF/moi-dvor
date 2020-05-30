@@ -1,0 +1,35 @@
+a {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+}
+
+.myYard {
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    flex: 1
+}
+
+.invite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid lightgrey;
+    flex: 1
+}
+
+.neighbors {
+    background-color: white;
+    height: 100%;
+    border: 1px solid lightgrey;
+    flex: 20
+}
+
+.navItem {
+    margin: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}

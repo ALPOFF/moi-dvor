@@ -11,8 +11,8 @@ class Profile extends Component {
 
     render() {
         return (
-            <div>
-                <div style={{display: 'flex'}}>
+            <div style={{backgroundColor: 'white', height: '100%'}}>
+                <div style={{display: 'flex', flexDirection: 'column'}}>
                         <div className="photo">
                             <img className="personPhoto" alt=""
                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvTnQ10XsARegWrtgIwH8LiUMMNeggR5CDtHdVDUPFZwdTA-En"/>

@@ -14,15 +14,14 @@ const App = () => {
     }, []);
 
     return (
-  
         <div className="AppContainer">
             <Header/>
             <div className="Channel">
-                <Route path='/messages/'
+                <Route path='/channels/'
                        render={() => <div className="ChannelItem" style={{flex: 1}}><Channel/></div>}/>
-                <Route path='/messages/dialogs/:channelId?/'
+                <Route path='/channels/dialogs/:channelId?/'
                        render={() => <div className="ChannelItem" style={{flex: 2}}><ChannelDialogs/></div>}/>
-                <Route path='/messages/dialogs/channelId/:dialogId?'
+                <Route path='/channels/dialogs/channelId/:dialogId?'
                        render={() => <div className="ChannelItem" style={{flex: 2}}><SelectedDialog/></div>}/>
                 <Route path='/neighbors/'
                        render={() => <div className="ChannelItem" style={{flex: 1}}><NeighborsContainer/></div>}/>

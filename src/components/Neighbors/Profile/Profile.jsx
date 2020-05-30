@@ -41,7 +41,7 @@ class Profile extends Component {
     render() {
         return (
             <div className="profileWrapper">
-                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <div style={{paddingTop: '30px', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                     <div className="photo">
                         <img className="personPhoto" alt=""
                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvTnQ10XsARegWrtgIwH8LiUMMNeggR5CDtHdVDUPFZwdTA-En"/>

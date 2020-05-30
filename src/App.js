@@ -18,13 +18,8 @@ const App = () => {
             <Header/>
             <Route path='/messages' render={() => <BodyContainer/>}/>
             <div className="Channel">
-<<<<<<< HEAD
             <Route path='/neighbors' render={() => <div className="ChannelItem" style={{flex: 1}}><NeighborsContainer/></div>}/>
             <Route path='/neighbors/profile/:userId?/' render={() => <div className="ChannelItem" style={{flex: 5}}><Profile/></div>}/>
-=======
-                <Route path='/neighbors' render={() => <NeighborsContainer/>}/>
-                <Route path='/neighbors/profile/:userId?/' render={() => <Profile/>}/>
->>>>>>> dev-ilyas
             </div>
         </div>
     )

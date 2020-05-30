@@ -1,17 +1,14 @@
 import React from "react";
 import './Header.scss'
 import {NavLink} from "react-router-dom";
-<<<<<<< HEAD
 import Button from "@material-ui/core/Button";
 import Profile from "../Neighbors/Profile";
 import ProfileWindow from "../ProfileWindow/ProfileWindow";
-=======
 import threads from '../../assets/images/header-images/threads.png';
 import neighbors from '../../assets/images/header-images/neighbors.png';
 import messages from '../../assets/images/header-images/messages.png';
 import search from '../../assets/images/header-images/search.png';
 import bell from '../../assets/images/header-images/bell.png';
->>>>>>> dev-ilyas
 
 const Header = () => {
     return (
@@ -47,14 +44,11 @@ const Header = () => {
             </div>
 
 
-<<<<<<< HEAD
             <NavLink to="/neighbors">
                 <div>Соседи</div>
             </NavLink>
 
             <ProfileWindow />
-=======
->>>>>>> dev-ilyas
         </div>
     )
 };

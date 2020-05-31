@@ -91,8 +91,7 @@ class ChannelDialogs extends Component {
                                             </select>
                                         </div>
                                         <input type="submit" value="Создать"/>
-                                        сам
-                                        #Общий канал
+
                                     </div>
                                     
                                     <div className="under">

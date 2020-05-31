@@ -83,7 +83,7 @@ class SelectedDialog extends Component {
                 </main>
                 <footer>
                     <form action="">
-                        <textarea placeholder="Введите сообщение" name="" id="" cols="100" rows="6"></textarea>
+                        <textarea placeholder="Введите сообщение" name="" id="" cols="100" rows="5"></textarea>
                     </form>
                 </footer>
                 {/* <h4>Selected dialog Title</h4>

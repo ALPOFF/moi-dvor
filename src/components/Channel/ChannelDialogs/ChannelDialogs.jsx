@@ -123,7 +123,7 @@ class ChannelDialogs extends Component {
                                 <div className="content">
                                     <span>{c.last_message != undefined && c.last_message.message}</span>
                                 </div>
-                                <div className="badge">#3 Объявления</div>
+                                {c.interests.map(i => <div className="badge">{i.name}</div>)}
                                 <hr />
                             </NavLink>)
                             }

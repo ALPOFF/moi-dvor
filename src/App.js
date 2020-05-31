@@ -9,18 +9,25 @@ import ChannelDialogs from "./components/Channel/ChannelDialogs/ChannelDialogs";
 import SelectedDialog from "./components/Channel/SelectedDialog/SelectedDialog";
 import axios from "axios";
 import {connect} from "react-redux";
-import {setUserProfileById, setUserProfileInt} from "./state/app-reducer";
+import {setAllInterests, setUserProfileById, setUserProfileInt} from "./state/app-reducer";
 const App = (props) => {
     const [channelList, setChannelList] = useState([]);
 
     useEffect(() => {
+        axios.get(`http://185.12.95.84:4444/interests`).then(u => {
+            let interests = []
+            u.data.interests.forEach(i => interests.push({label: i.name, value: i.id}))
+            props.setAllInterests(interests)
+            console.log('LLL', interests[0])
+        })
         axios.get(`http://185.12.95.84:4444/user/3`).then(u => {
             console.log('uinfo', u.data);
             let newInterestArr = []
-            u.data.interests.forEach(i => newInterestArr.push({'label': i.name, value: i.id}))
+            u.data.interests.forEach(i => newInterestArr.push({'label': i.name, value: i.id, }))
             props.setUserProfileInt(newInterestArr)
             props.setUserProfileById(u.data)
         })
+
     }, []);
 
     return (
@@ -42,4 +49,4 @@ const App = (props) => {
     )
 };
 
-export default connect(null, {setUserProfileInt, setUserProfileById})(App);
+export default connect(null, {setUserProfileInt, setUserProfileById, setAllInterests})(App);

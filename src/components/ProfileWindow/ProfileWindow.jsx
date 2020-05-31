@@ -46,12 +46,11 @@ class ProfileWindow extends Component {
             //     console.log(u.data)
             // })
         };
-        let work = [{a: 1, b: 2}]
         return (
             <div>
                 <Button colored onClick={this.handleOpenDialog} raised ripple>Profile</Button>
                 <Dialog open={this.state.openDialog}>
-                    <ProfileReduxForm onSubmit={onSubmitTask} w={this.props.userProfileInt} handleCloseDialog={this.handleCloseDialog} />
+                    <ProfileReduxForm onSubmit={onSubmitTask} w={this.props.interests} handleCloseDialog={this.handleCloseDialog} />
                 </Dialog>
             </div>
         );
@@ -60,7 +59,7 @@ class ProfileWindow extends Component {
 
 let mapStateToProps = (state) => {
     return {
-        userProfileInt: state.appReducer.userProfileInt
+        interests: state.appReducer.interests
     }
 }
 

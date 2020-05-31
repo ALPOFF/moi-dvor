@@ -4,13 +4,8 @@ import { Button, DialogActions, DialogTitle } from "react-mdl";
 import Interes from "./common/Interes";
 import SelectInput from "./common/SelectInput";
 
-const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
-    const options =  [{label: "Футбол", value: "i.id"},
-     {label: "Игры", value: "i.id"},
-     {label: "Готовка", value: "i.id"}]
-
-
-    return <Form onSubmit={handleSubmit}>
+const ProfileRedux = ({handleSubmit, handleCloseDialog, w, upi}) => {
+     return <Form onSubmit={handleSubmit}>
         <div className="photo-card" style={{ display: 'flex', flexDirection: 'column' }}>
             <h2>Ваше фото</h2>
             <div className="user-image-container" style={{ display: 'flex', flexDirection: 'row' }}>
@@ -66,8 +61,13 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
                 <h2>Интересы</h2>
             </div>
             <div className="formItems">
-                <Field placeholder={"Выберите интересы..."} name={"interests"} component={"input"} />
+                <div style={{marginTop: '5px', display: 'flex'}}>
+                {upi.map(m => <Interes label={m.label} />)}
+                </div>
             </div>
+        {/*    <div className="formItems">*/}
+        {/*    <Field placeholder={"Выберите интересы..."} name={"interests"} component={"input"} />*/}
+        {/*</div>*/}
         </div>
         <Button type='button'>Изменить интересы</Button>
         <div className="formItemsInterest">

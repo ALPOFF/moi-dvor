@@ -37,6 +37,8 @@ class Header extends Component {
         });
     }
 
+
+
     render() {
         const onSubmitTask = (formData) => {
             console.log(11111)
@@ -79,7 +81,7 @@ class Header extends Component {
                         </div>
                         <button className="inline-block" onClick={this.handleOpenDialog}>Профиль</button>
                         <Dialog open={this.state.openDialog}>
-                            <ProfileReduxForm y={this.props.userProfile} w={this.props.userProfileInt}
+                            <ProfileReduxForm y={this.props.userProfile} w={this.props.interestsOut} upi={this.props.userProfileInt}
                                               onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
                         </Dialog>
                     </div>
@@ -102,7 +104,9 @@ class Header extends Component {
 let mapStateToProps = (state) => {
     return {
         userProfileInt: state.appReducer.userProfileInt,
-        userProfile: state.appReducer.userProfile
+        userProfile: state.appReducer.userProfile,
+        interests: state.appReducer.interests,
+        interestsOut: state.appReducer.interestsOut
     }
 }
 

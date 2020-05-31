@@ -64,9 +64,9 @@ class Profile extends Component {
                             <span>Состоит в браке</span>}</h4>
                         <div style={{display: 'flex', alignItems: 'center'}}>
                          <span className="Interes">
-                             <h4>Интересы: </h4>
+                             <h4 style={{paddingRight: 10}}>Интересы: </h4>
                             {this.state.user_info.interests.length !== 0 ? this.state.user_info.interests.map(i =>
-                                <Interes name={i.name}/>) : <h4> Отсутствуют</h4>}
+                                <Interes label={i.name}/>) : <h4> Отсутствуют</h4>}
                         </span>
                         </div>
                     </div> : <h1>Loading</h1>}

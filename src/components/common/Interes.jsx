@@ -3,9 +3,7 @@ import './Interes.scss'
 
 const Interes = (props) => {
     return (
-        <div style={{marginTop: '5px'}} className="InteresCont">
-            <h5>{props.name}</h5>
-        </div>
+        <h5 className="InteresCont">{props.label}</h5>
     )
 };
 

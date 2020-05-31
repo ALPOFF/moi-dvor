@@ -111,11 +111,21 @@ hr { display: block; height: 1px;
             display: flex;
             justify-content: space-between;
             padding: 4px 20px;
+            padding-right: 15px;
 
             .wrapper-name {
                 display: flex;
                 margin-right: 40px;
-                align-self: center;
+
+                label {
+                    align-self: center;
+                }
+
+                input {
+                    padding: 0 20px;
+                    padding-top: 2px;
+                    font-size: 16px;
+                }
             }
 
             .wrapper-badge {
@@ -125,10 +135,15 @@ hr { display: block; height: 1px;
                 
                 label {
                     margin-right: 10px;
+                    align-self: center;
                 }
 
                 select {
                     padding: 5px 15px;
+
+                    option {
+                        padding: 0 10px;
+                    }
                 }
 
             }
@@ -136,6 +151,8 @@ hr { display: block; height: 1px;
             button {
                 align-self: center;
                 margin: 5px 10px;
+                margin-right: 0;
+                padding-right: 0;
                 color: #6b6b6b;
                 border: 1px solid lightgray;
             }

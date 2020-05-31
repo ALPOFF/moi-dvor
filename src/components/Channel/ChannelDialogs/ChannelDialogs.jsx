@@ -12,8 +12,12 @@ class ChannelDialogs extends Component {
         this.state = {
             chndlg: [],
             channelId: null,
-            newThreadActive: false
+            newThreadActive: false,
+            threadName: ''
         };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -39,7 +43,8 @@ class ChannelDialogs extends Component {
             console.log('1111111111111111111')
             this.setState({ chndlg: u.data })
             console.log(this.state.chndlg)
-        })
+        });
+
     }
 
     generateNewThread() {
@@ -51,6 +56,20 @@ class ChannelDialogs extends Component {
 
     }
 
+    handleChange(event) {
+        this.setState({threadName: event.target.value});
+        console.log(event.target.value);
+    }
+
+    handleSubmit(event) {
+
+        axios.post(`http://185.12.95.84:4444/dialogs`, {name: this.state.threadName, channel_id: this.state.channelId }).then(u => {
+            console.log('otvetM', u.data);
+        })
+        alert('Отправленное имя: ' + this.state.threadName);
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div className="threads-tab-container">
@@ -58,23 +77,23 @@ class ChannelDialogs extends Component {
                     {
                         this.state.newThreadActive ?
                             <div class="form-wrapper">
-                                <form action="">
+                                <form onSubmit={this.handleSubmit}>
                                     <div className="above">
                                         <div className="wrapper-name">
                                             <label htmlFor="new-thread">Название</label>
-                                            <input type="text" name="new-thread" id="new-thread" required />
+                                            <input onChange={this.handleChange} placeholder="Название" type="text" name={this.state.threadName} id="new-thread" value={this.state.threadName} required />
                                         </div>
 
                                         <div className="wrapper-badge">
-                                            <label htmlFor="badge-label">Категория</label>
-                                            <select name="badge-label" id="cars">
-                                                <option value="volvo">Категория 1</option>
-                                                <option value="saab">Категория 2</option>
-                                                <option value="mercedes">Категория 3</option>
-                                                <option value="audi">Категория 4</option>
+                                            <label htmlFor="badge-label">Каналы</label>
+                                            <select name="badge-label" id="channels">
+                                                <option value="common">Общий канал</option>
+                                                <option value="saab">Канал отчуждения</option>
+                                                <option value="mercedes">Канал по интересам</option>
+                                                <option value="audi">ТВ3</option>
                                             </select>
                                         </div>
-                                        <button type="submit">Создать</button>
+                                        <input type="submit" value="Создать"/>
 
                                     </div>
                                     

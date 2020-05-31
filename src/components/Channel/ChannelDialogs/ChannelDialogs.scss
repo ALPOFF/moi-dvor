@@ -7,7 +7,7 @@
 
     .add-new-thread-wrapper {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         width: 100%;
         flex: 2;
 
@@ -25,15 +25,21 @@
             align-self: center;
         }
 
-        img {
-            padding: 10px;
-            display: inline-block;
-            margin-right: 12px;
-            height: 30px;      
-            align-self: center;      
-        }
+        // img {
+        //     padding: 10px;
+        //     display: inline-block;
+        //     margin-right: 12px;
+        //     height: 30px;      
+        //     align-self: center;      
+        // }
+
 
     }
+    .add-new-thread-wrapper:hover {
+        border: 2.5px solid lightgray;
+        cursor: pointer;
+    }
+
 
     .threads-list-wrapper {
         flex:9;
@@ -88,4 +94,98 @@ hr { display: block; height: 1px;
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
+}
+
+
+.form-wrapper {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .above {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 20px;
+            padding-right: 15px;
+
+            .wrapper-name {
+                display: flex;
+                margin-right: 40px;
+
+                label {
+                    align-self: center;
+                }
+
+                input {
+                    padding: 0 20px;
+                    padding-top: 2px;
+                    font-size: 16px;
+                }
+            }
+
+            .wrapper-badge {
+                display: flex;
+                margin-right: 40px;
+                align-self: center;
+                
+                label {
+                    margin-right: 10px;
+                    align-self: center;
+                }
+
+                select {
+                    padding: 5px 15px;
+
+                    option {
+                        padding: 0 10px;
+                    }
+                }
+
+            }
+
+            button {
+                align-self: center;
+                margin: 5px 10px;
+                margin-right: 0;
+                padding-right: 0;
+                color: #6b6b6b;
+                border: 1px solid lightgray;
+            }
+        }
+
+        .under {
+            padding: 4px 20px;
+
+        }
+
+        textarea {
+            resize: none;
+            vertical-align: top;
+            font-size: 16px;
+            width: 100%;
+
+        }
+    }
+
+
+}
+
+.new-thread-placeholder {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+        align-self: center;
+        padding: 10px;
+        display: inline-block;
+        margin-right: 12px;
+        height: 30px; 
+        
+        // @todo запинить в конец с фелк
+    }
 }

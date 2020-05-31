@@ -6,6 +6,7 @@ import 'react-mdl/extra/material.js'
 import ProfileReduxForm from "../ProfileReduxForm";
 import {connect} from "react-redux";
 import appReducer from "../../state/app-reducer";
+import axios from "axios";
 
 class ProfileWindow extends Component {
     constructor(props) {
@@ -39,8 +40,11 @@ class ProfileWindow extends Component {
 
     render() {
         const onSubmitTask = (formData) => {
-            console.log(formData)
+            console.log('INT', formData.val[0].value)
             //this.props.setTask(formData.taskName, formData.idWorker, formData.description, formData.deadline, formData.taskAddress)
+            // axios.get(`http://185.12.95.84:4444/user`, {user_id: 3, firstname: formData.firstname, lastname: formData.lastname, patronymic: formData.patronymic, phone_number: formData.phone_number, address_id: "1", flat_number: "49", car_number: "625998", gender: 1, age: 44, marital_status: 1}).then(u => {
+            //     console.log(u.data)
+            // })
         };
         let work = [{a: 1, b: 2}]
         return (

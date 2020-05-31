@@ -36,6 +36,7 @@ class Header extends Component {
             openDialog: false
         });
     }
+
     render() {
         const onSubmitTask = (formData) => {
             console.log(11111)
@@ -62,6 +63,7 @@ class Header extends Component {
                         <img className="inline-block" src={search} width="30" alt=""/>
                         <div className="inline-block">Поиск</div>
                     </NavLink>
+
                 </div>
                 <div className="user-profile-wrapper">
                     <NavLink className="nav-item header-element profile-container" to="/bell">
@@ -70,20 +72,26 @@ class Header extends Component {
                     </NavLink>
 
                     <div onClick={() => console.log('1111')} className="nav-item header-element profile-container">
-                        <button onClick={this.handleOpenDialog}>Profile</button>
-                        <Dialog open={this.state.openDialog}>
-                            <ProfileReduxForm y={this.props.userProfile} w={this.props.userProfileInt} onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
-                        </Dialog>
-                    </div>
-
-                    <div className="nav-item header-element profile-container" to="/profile">
                         <div className="inline-block">
                             <div className="circle">
                                 <div className="circle-item">A</div>
                             </div>
                         </div>
-                        <div className="inline-block">Профиль</div>
+                        <button className="inline-block" onClick={this.handleOpenDialog}>Профиль</button>
+                        <Dialog open={this.state.openDialog}>
+                            <ProfileReduxForm y={this.props.userProfile} w={this.props.userProfileInt}
+                                              onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
+                        </Dialog>
                     </div>
+
+                    {/*<div className="nav-item header-element profile-container" to="/profile">*/}
+                    {/*    <div className="inline-block">*/}
+                    {/*        <div className="circle">*/}
+                    {/*            <div className="circle-item">A</div>*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*    <div className="inline-block">Профиль</div>*/}
+                    {/*</div>*/}
 
                 </div>
             </div>

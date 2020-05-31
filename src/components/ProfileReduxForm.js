@@ -9,7 +9,7 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
      {label: "Игры", value: "i.id"},
      {label: "Готовка", value: "i.id"}]
 
-const ProfileRedux = ({ handleSubmit, handleCloseDialog }) => {
+
     return <Form onSubmit={handleSubmit}>
         <div className="photo-card" style={{ display: 'flex', flexDirection: 'column' }}>
             <h2>Ваше фото</h2>
@@ -64,21 +64,13 @@ const ProfileRedux = ({ handleSubmit, handleCloseDialog }) => {
             </div>
             <div className="intersts-card">
                 <h2>Интересы</h2>
-                <Interes />
             </div>
             <div className="formItems">
                 <Field placeholder={"Выберите интересы..."} name={"interests"} component={"input"} />
             </div>
         </div>
-        <div>
-            <h2>Интересы</h2>
-            <Interes />
-        </div>
-        <div className="formItems">
-            <Field placeholder={"Выберите интересы..."} name={"description"} component={"input"}/>
-        </div>
         <Button type='button'>Изменить интересы</Button>
-        <div className="formItems">
+        <div className="formItemsInterest">
             <Field name={"val"} options={w} component={SelectInput} multi/>
         </div>
         <h2>Пароль</h2>

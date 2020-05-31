@@ -48,6 +48,7 @@ class SelectedDialog extends Component {
                 </header>
                 <main className="dialog-container">
 
+                    {this.state.chndlg.map(m =>
                     <div className="global-comment-wrapper">
                         <div className="message-placeholder">
                             <img
@@ -55,10 +56,10 @@ class SelectedDialog extends Component {
                                 alt=""/>
                             <div className="msg-info">
                                 <header className="username">
-                                    {this.state.chndlg.map(m => <h5>
+                                     <h5>
                                         {m.user.first_name}
                                         {' '+m.user.last_name}
-                                    </h5>)}
+                                    </h5>
                                     <p className="time">4ч.</p>
                                 </header>
                                 <section className="community">
@@ -66,22 +67,23 @@ class SelectedDialog extends Component {
                                 </section>
                             </div>
 
+
                         </div>
                         <div className="message-appendix">
                             <p>
-                                {this.state.chndlg.map(m => <div>
+                                  <div>
                                      {m.message}
                                      {m.datetime}
-                                </div>)}
+                                </div>
                             </p>
                         </div>
                     </div>
-
+                    )}
 
                 </main>
                 <footer>
                     <form action="">
-                        <textarea placeholder="Введите сообщение" name="" id="" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Введите сообщение" name="" id="" cols="100" rows="6"></textarea>
                     </form>
                 </footer>
                 {/* <h4>Selected dialog Title</h4>

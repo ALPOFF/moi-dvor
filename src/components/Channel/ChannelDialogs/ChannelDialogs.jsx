@@ -22,7 +22,7 @@ class ChannelDialogs extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.match.params.channelId !== this.state.channelId) {
-            axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs`).then(u => {
+            axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs/${3}`).then(u => {
                 this.setState({chndlg: u.data})
                 console.log('otvetU', u.data)
                 this.setState({channelId: this.props.match.params.channelId})
@@ -93,7 +93,7 @@ class ChannelDialogs extends Component {
                                         <input type="submit" value="Создать"/>
 
                                     </div>
-                                    
+
                                     <div className="under">
                                         <div className="wrapper-textarea">
                                             <textarea id="thread-text" name="" id="" rows="10" placeholder="Введите описание...">

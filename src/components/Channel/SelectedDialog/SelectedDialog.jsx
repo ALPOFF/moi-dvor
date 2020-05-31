@@ -55,7 +55,10 @@ class SelectedDialog extends Component {
                                 alt=""/>
                             <div className="msg-info">
                                 <header className="username">
-                                    <h5>Иван Иванов</h5>
+                                    {this.state.chndlg.map(m => <h5>
+                                        {m.user.first_name}
+                                        {' '+m.user.last_name}
+                                    </h5>)}
                                     <p className="time">4ч.</p>
                                 </header>
                                 <section className="community">

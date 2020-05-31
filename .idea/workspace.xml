@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a15c1ab0-5c99-4dab-b70e-c16f541c32df" name="Default Changelist" comment="" />
+    <list default="true" id="a15c1ab0-5c99-4dab-b70e-c16f541c32df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ProfileEditReduxForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/SelectInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Channel/ChannelDialogs/ChannelDialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/ChannelDialogs/ChannelDialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Channel/SelectedDialog/SelectedDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Channel/SelectedDialog/SelectedDialog.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Neighbors/NeighborsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neighbors/NeighborsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Neighbors/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neighbors/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileReduxForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileReduxForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileWindow/ProfileWindow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileWindow/ProfileWindow.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileWindow/ProfileWindow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileWindow/ProfileWindow.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/app-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/app-reducer.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -34,6 +50,7 @@
       <recent name="D:\web\moi-dvor\src\components\CustomComp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\web\moi-dvor\src\components" />
       <recent name="D:\web\moi-dvor\src" />
     </key>
   </component>

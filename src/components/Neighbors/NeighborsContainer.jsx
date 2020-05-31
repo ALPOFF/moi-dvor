@@ -3,9 +3,14 @@ import {NavLink} from "react-router-dom";
 import add from './../../assets/images/add.png';
 import './NeighborsContainer.scss'
 import axios from "axios";
+import Select from 'react-select';
+
+
+
 
 const NeighborsContainer = () => {
     const [users, setUsers] = useState([]);
+
 
     useEffect(() => {
         axios.get(`http://185.12.95.84:4444/users/1`).then(u => {
@@ -16,9 +21,10 @@ const NeighborsContainer = () => {
 
     return (
         <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+
             <div className="myYard">
                 <h3>Мой двор</h3>
-                <h6>4 участника</h6>
+                <h6>{users.length} участника</h6>
             </div>
             <div className="invite">
                 <h4>Пригласить людей</h4>

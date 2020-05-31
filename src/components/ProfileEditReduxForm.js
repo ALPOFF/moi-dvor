@@ -1,16 +1,14 @@
 import {Field, Form, reduxForm} from "redux-form";
 import React from "react";
-import {Button, DialogActions} from "react-mdl";
+import {Button, DialogActions, DialogTitle} from "react-mdl";
 import Interes from "./common/Interes";
-import SelectInput from "./common/SelectInput";
 
-const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
-    const options =  [{label: "Футбол", value: "i.id"},
-     {label: "Игры", value: "i.id"},
-     {label: "Готовка", value: "i.id"}]
+const ProfileEditRedux = ({handleSubmit, handleCloseDialog}) => {
+
 
     return <Form onSubmit={handleSubmit}>
         <div style={{display: 'flex', flexDirection: 'column'}}>
+
             <h2>Фото</h2>
             <div style={{display: 'flex', flexDirection: 'row'}}>
                 <div className="photo">
@@ -22,7 +20,7 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
         </div>
         <h2>Фамилия</h2>
         <div className="formItems">
-            <Field placeholder={"Введите фамилию..."} value={"Дьяков"} name={"description"} component={"input"}/>
+            <Field placeholder={"Введите фамилию..."} name={"description"} component={"input"}/>
         </div>
         <h2>Имя</h2>
         <div className="formItems">
@@ -68,9 +66,6 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
             <Field placeholder={"Выберите интересы..."} name={"description"} component={"input"}/>
         </div>
         <Button type='button'>Изменить интересы</Button>
-        <div className="formItems">
-            <Field name={"val"} options={w} component={SelectInput} multi/>
-        </div>
         <h2>Пароль</h2>
         <Button type='button'>Изменить пароль</Button>
         <DialogActions>
@@ -80,9 +75,9 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
     </Form>
 };
 
-const ProfileReduxForm = reduxForm({
-    form: 'task',
+const ProfileEditReduxForm = reduxForm({
+    form: 'edit',
     enableReinitialize: true,
-})(ProfileRedux);
+})(ProfileEditRedux);
 
-export default ProfileReduxForm;
+export default ProfileEditReduxForm;

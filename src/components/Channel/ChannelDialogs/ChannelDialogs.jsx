@@ -4,6 +4,13 @@ import './ChannelDialogs.scss';
 import newthread from '../../../assets/images/threads-tab/newthread.png';
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import Select from 'react-select'
+
+const options = [
+    { id: 1, value: 'Music', label: 'Музыка' },
+    { id: 2, value: 'Sport', label: 'Спорт' },
+    { id: 3, value: 'Food', label: 'Еда' }
+]
 
 class ChannelDialogs extends Component {
     constructor(props) {
@@ -13,19 +20,21 @@ class ChannelDialogs extends Component {
             chndlg: [],
             channelId: null,
             newThreadActive: false,
-            threadName: ''
+            threadName: '',
+            interests: []
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSelectChange = this.handleSelectChange.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.match.params.channelId !== this.state.channelId) {
             axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs/${3}`).then(u => {
-                this.setState({chndlg: u.data})
+                this.setState({ chndlg: u.data })
                 console.log('otvetU', u.data)
-                this.setState({channelId: this.props.match.params.channelId})
+                this.setState({ channelId: this.props.match.params.channelId })
             })
         }
     }
@@ -54,17 +63,26 @@ class ChannelDialogs extends Component {
     }
 
     handleChange(event) {
-        this.setState({threadName: event.target.value});
+        this.setState({ threadName: event.target.value });
         console.log(event.target.value);
     }
 
     handleSubmit(event) {
 
-        axios.post(`http://185.12.95.84:4444/dialogs`, {name: this.state.threadName, channel_id: this.state.channelId }).then(u => {
+        axios.post(`http://185.12.95.84:4444/dialogs`, { 
+            name: this.state.threadName, 
+            channel_id: this.state.channelId,
+            interests: [1, 2, 3]
+         }).then(u => {
             console.log('otvetM', u.data);
         })
         alert('Отправленное имя: ' + this.state.threadName);
         event.preventDefault();
+    }
+
+    handleSelectChange(event) {
+        console.log(event);
+        this.setState({ interests: event });
     }
 
     render() {
@@ -90,17 +108,18 @@ class ChannelDialogs extends Component {
                                                 <option value="audi">ТВ3</option>
                                             </select>
                                         </div>
-                                        <input type="submit" value="Создать"/>
+                                        <input type="submit" value="Создать" />
 
                                     </div>
-
-                                    <div className="under">
-                                        <div className="wrapper-textarea">
-                                            <textarea id="thread-text" name="" id="" rows="10" placeholder="Введите описание...">
-                                            </textarea>
-                                        </div>
-
-                                    </div>
+                                    <section className="interests">
+                                        <Select onChange={this.handleSelectChange}
+                                            isMulti
+                                            name="colors"
+                                            options={options}
+                                            className="basic-multi-select"
+                                            classNamePrefix="select"
+                                        />
+                                    </section>
 
                                 </form>
                             </div>
@@ -119,7 +138,7 @@ class ChannelDialogs extends Component {
                     <main className="threads-list">
                         <div className="thread-list-item">
                             {this.state.chndlg.map(c => <NavLink to={"/channels/dialogs/" + c.id}>
-                                <div className="thread-item-title" style={{margin: '20px'}}><h4>{c.name}</h4></div>
+                                <div className="thread-item-title" style={{ margin: '20px' }}><h4>{c.name}</h4></div>
                                 <div className="content">
                                     <span>{c.last_message != undefined && c.last_message.message}</span>
                                 </div>

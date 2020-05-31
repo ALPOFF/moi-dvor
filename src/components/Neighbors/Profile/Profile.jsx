@@ -3,6 +3,9 @@ import {withRouter} from "react-router-dom";
 import './Profile.scss'
 import Interes from "../../common/Interes";
 import axios from "axios";
+import Select from "react-select";
+import {connect} from "react-redux";
+import {setUserProfileById} from "../../../state/app-reducer";
 
 class Profile extends Component {
     constructor(props) {
@@ -33,6 +36,9 @@ class Profile extends Component {
         axios.get(`http://185.12.95.84:4444/user/${userId}`).then(u => {
             console.log('uinfo', u.data);
             this.setState({user_info: u.data})
+            let newInterestArr = []
+            u.data.interests.forEach(i => newInterestArr.push({'label': i.name, value: 'i.id'}))
+            //this.props.setUserProfileById(newInterestArr)
             console.log(this.state.user_info.interests.length)
         })
     }
@@ -41,7 +47,7 @@ class Profile extends Component {
     render() {
         return (
             <div className="profileWrapper">
-                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <div style={{paddingTop: '30px', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                     <div className="photo">
                         <img className="personPhoto" alt=""
                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvTnQ10XsARegWrtgIwH8LiUMMNeggR5CDtHdVDUPFZwdTA-En"/>
@@ -70,4 +76,8 @@ class Profile extends Component {
     }
 }
 
-export default withRouter(Profile);
+// const mapStateTOProps = (state) => ({
+//
+// })
+
+export default connect(null, {})(withRouter(Profile));

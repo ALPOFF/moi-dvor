@@ -1,29 +1,41 @@
-const SET_CHOOSED_TARIFF = 'app/SET_CHOOSED_TARIFF';
+const SET_USER_PROFILE_INT = 'app/SET_USER_PROFILE_INT';
+const SET_USER_PROFILE_BY_ID = 'app/SET_USER_PROFILE_BY_ID';
 
 let initialState = {
-    interesArr: [
-        {interesTitle: 'ыаыв', interesId: 0},
-        {interesTitle: 'dsfsfsd', interesId: 1}
-    ]
+    userProfileInt: [],
+    userProfile: [],
+    xxx: 5
 };
 
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_CHOOSED_TARIFF:
+        case SET_USER_PROFILE_INT:
             return {
                 ...state,
-                interesArr: action.interesArr
+                userProfileInt: action.userProfileInt
+            };
+        case SET_USER_PROFILE_BY_ID:
+            return {
+                ...state,
+                userProfile: action.userProfile
             };
         default:
             return state;
     }
 };
 
-// export const ChoosedTariffClick = (tariff) => {
-//     return {
-//         type: SET_CHOOSED_TARIFF,
-//         tariff
-//     }
-// };
+export const setUserProfileInt = (userProfileInt) => {
+    return {
+        type: SET_USER_PROFILE_INT,
+        userProfileInt
+    }
+};
+
+export const setUserProfileById = (userProfile) => {
+    return {
+        type: SET_USER_PROFILE_BY_ID,
+        userProfile
+    }
+};
 
 export default appReducer;

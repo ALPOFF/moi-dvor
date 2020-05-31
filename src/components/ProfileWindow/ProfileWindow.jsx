@@ -4,6 +4,8 @@ import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from "react-m
 //import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js'
 import ProfileReduxForm from "../ProfileReduxForm";
+import {connect} from "react-redux";
+import appReducer from "../../state/app-reducer";
 
 class ProfileWindow extends Component {
     constructor(props) {
@@ -11,6 +13,11 @@ class ProfileWindow extends Component {
         this.state = {};
         this.handleOpenDialog = this.handleOpenDialog.bind(this);
         this.handleCloseDialog = this.handleCloseDialog.bind(this);
+    }
+
+    componentDidMount() {
+        console.log('TUT CODE', this.props.userProfileInt)
+        console.log('HELLP')
     }
 
     handleOpenDialog() {
@@ -25,21 +32,32 @@ class ProfileWindow extends Component {
         });
     }
 
+    xxx() {
+        alert(5)
+    }
+
+
     render() {
         const onSubmitTask = (formData) => {
-            console.log(11111)
             console.log(formData)
             //this.props.setTask(formData.taskName, formData.idWorker, formData.description, formData.deadline, formData.taskAddress)
         };
+        let work = [{a: 1, b: 2}]
         return (
             <div>
                 <Button colored onClick={this.handleOpenDialog} raised ripple>Profile</Button>
                 <Dialog open={this.state.openDialog}>
-                    <ProfileReduxForm onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
+                    <ProfileReduxForm onSubmit={onSubmitTask} w={this.props.userProfileInt} handleCloseDialog={this.handleCloseDialog} />
                 </Dialog>
             </div>
         );
     }
 }
 
-export default ProfileWindow;
+let mapStateToProps = (state) => {
+    return {
+        userProfileInt: state.appReducer.userProfileInt
+    }
+}
+
+export default connect(mapStateToProps, {})(ProfileWindow);

@@ -11,6 +11,7 @@ import search from '../../assets/images/header-images/search.png';
 import bell from '../../assets/images/header-images/bell.png';
 import {Dialog} from "react-mdl";
 import ProfileReduxForm from "../ProfileReduxForm";
+import {connect} from "react-redux";
 
 class Header extends Component {
     constructor(props) {
@@ -18,6 +19,10 @@ class Header extends Component {
         this.state = {};
         this.handleOpenDialog = this.handleOpenDialog.bind(this);
         this.handleCloseDialog = this.handleCloseDialog.bind(this);
+    }
+
+    componentDidMount() {
+
     }
 
     handleOpenDialog() {
@@ -67,7 +72,7 @@ class Header extends Component {
                     <div onClick={() => console.log('1111')} className="nav-item header-element profile-container">
                         <button onClick={this.handleOpenDialog}>Profile</button>
                         <Dialog open={this.state.openDialog}>
-                            <ProfileReduxForm onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
+                            <ProfileReduxForm y={this.props.userProfile} w={this.props.userProfileInt} onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
                         </Dialog>
                     </div>
 
@@ -86,4 +91,11 @@ class Header extends Component {
     }
 }
 
-export default Header;
+let mapStateToProps = (state) => {
+    return {
+        userProfileInt: state.appReducer.userProfileInt,
+        userProfile: state.appReducer.userProfile
+    }
+}
+
+export default connect(mapStateToProps, {})(Header);

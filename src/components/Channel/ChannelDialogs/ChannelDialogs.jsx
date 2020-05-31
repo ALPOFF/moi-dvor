@@ -21,14 +21,11 @@ class ChannelDialogs extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        let channelId = this.props.match.params.channelId;
-        console.log(this.state.channelId)
-        console.log(channelId)
         if (this.props.match.params.channelId !== this.state.channelId) {
-            axios.get(`http://185.12.95.84:4444/channels/${channelId}/dialogs`).then(u => {
-                console.log(u.data);
-                this.setState({ chndlg: u.data })
-                this.setState({ channelId: this.props.match.params.channelId })
+            axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs`).then(u => {
+                this.setState({chndlg: u.data})
+                console.log('otvetU', u.data)
+                this.setState({channelId: this.props.match.params.channelId})
             })
         }
     }
@@ -94,7 +91,8 @@ class ChannelDialogs extends Component {
                                             </select>
                                         </div>
                                         <input type="submit" value="Создать"/>
-
+                                        сам
+                                        #Общий канал
                                     </div>
                                     
                                     <div className="under">
@@ -122,12 +120,9 @@ class ChannelDialogs extends Component {
                     <main className="threads-list">
                         <div className="thread-list-item">
                             {this.state.chndlg.map(c => <NavLink to={"/channels/dialogs/" + c.id}>
-                                <div className="thread-item-title" style={{ margin: '20px' }}><h4>{c.name}</h4></div>
-                                <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-                                atque magni quos deleniti quae dolor et aliquam. Sequi ipsam soluta explicabo quas,
-                                adipisci quasi magni exercitationem illum inventore cupiditate nostrum mollitia
-                                corporis ab maxime nulla tempora cumque placeat veniam distinctio asperiores
-                                perferendis.
+                                <div className="thread-item-title" style={{margin: '20px'}}><h4>{c.name}</h4></div>
+                                <div className="content">
+                                    <span>{c.last_message != undefined && c.last_message.message}</span>
                                 </div>
                                 <div className="badge">#3 Объявления</div>
                                 <hr />

@@ -1,6 +1,6 @@
-import {Field, Form, reduxForm} from "redux-form";
+import { Field, Form, reduxForm } from "redux-form";
 import React from "react";
-import {Button, DialogActions} from "react-mdl";
+import { Button, DialogActions, DialogTitle } from "react-mdl";
 import Interes from "./common/Interes";
 import SelectInput from "./common/SelectInput";
 
@@ -9,55 +9,65 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
      {label: "Игры", value: "i.id"},
      {label: "Готовка", value: "i.id"}]
 
+const ProfileRedux = ({ handleSubmit, handleCloseDialog }) => {
     return <Form onSubmit={handleSubmit}>
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-            <h2>Фото</h2>
-            <div style={{display: 'flex', flexDirection: 'row'}}>
+        <div className="photo-card" style={{ display: 'flex', flexDirection: 'column' }}>
+            <h2>Ваше фото</h2>
+            <div className="user-image-container" style={{ display: 'flex', flexDirection: 'row' }}>
                 <div className="photo">
                     <img className="personPhoto" alt=""
-                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvTnQ10XsARegWrtgIwH8LiUMMNeggR5CDtHdVDUPFZwdTA-En"/>
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvTnQ10XsARegWrtgIwH8LiUMMNeggR5CDtHdVDUPFZwdTA-En" />
                 </div>
-                <button type='button'>Поменять фото</button>
+                {/* <button type='button'>Поменять фото</button> */}
             </div>
         </div>
-        <h2>Фамилия</h2>
-        <div className="formItems">
-            <Field placeholder={"Введите фамилию..."} value={"Дьяков"} name={"description"} component={"input"}/>
-        </div>
-        <h2>Имя</h2>
-        <div className="formItems">
-            <Field placeholder={"Введите имя..."} name={"description"} component={"input"}/>
-        </div>
-        <h2>Отчество</h2>
-        <div className="formItems">
-            <Field placeholder={"Введите отчество..."} name={"description"} component={"input"}/>
-        </div>
-        <div className="address">
-            <div className="addressItem">
-                <h2>Дом</h2>
-                <div className="formItems">
-                    <Field placeholder={"Номер дома/корпуса..."} name={"description"} component={"input"}/>
+        <div className="contact-info">
+            <h2>Фамилия</h2>
+            <div className="formItems">
+                <Field placeholder={"Введите фамилию..."} name={"lastname"} component={"input"} />
+            </div>
+            <h2>Имя</h2>
+            <div className="formItems">
+                <Field placeholder={"Введите имя..."} name={"firstname"} component={"input"} />
+            </div>
+            <h2>Отчество</h2>
+            <div className="formItems">
+                <Field placeholder={"Введите отчество..."} name={"patronymic"} component={"input"} />
+            </div>
+            <div className="address">
+                <div className="addressItem">
+                    <h2>Дом</h2>
+                    <div className="formItems">
+                        <Field placeholder={"Номер дома/корпуса..."} name={"house-number"} component={"input"} />
+                    </div>
+                </div>
+                <div>
+                    <h2>Квартира</h2>
+                    <div className="formItems">
+                        <Field placeholder={"Номер квартиры..."} name={"flat-number"} component={"input"} />
+                    </div>
                 </div>
             </div>
-            <div>
-                <h2>Квартира</h2>
-                <div className="formItems">
-                    <Field placeholder={"Номер квартиры..."} name={"description"} component={"input"}/>
+            <div style={{ display: 'flex' }}>
+                <div className="phoneAuto">
+                    <h2>Телефон</h2>
+                    <div className="formItems">
+                        <Field placeholder={"Номер телефона..."} name={"phone-number"} component={"input"} />
+                    </div>
+                </div>
+                <div className="phoneAuto">
+                    <h2>Автомобиль</h2>
+                    <div className="formItems">
+                        <Field placeholder={"Номер авто..."} name={"car-number"} component={"input"} />
+                    </div>
                 </div>
             </div>
-        </div>
-        <div style={{display: 'flex'}}>
-            <div className="phoneAuto">
-                <h2>Телефон</h2>
-                <div className="formItems">
-                    <Field placeholder={"Номер телефона..."} name={"description"} component={"input"}/>
-                </div>
+            <div className="intersts-card">
+                <h2>Интересы</h2>
+                <Interes />
             </div>
-            <div className="phoneAuto">
-                <h2>Авто</h2>
-                <div className="formItems">
-                    <Field placeholder={"Номер авто..."} name={"description"} component={"input"}/>
-                </div>
+            <div className="formItems">
+                <Field placeholder={"Выберите интересы..."} name={"interests"} component={"input"} />
             </div>
         </div>
         <div>
@@ -74,7 +84,7 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, y}) => {
         <h2>Пароль</h2>
         <Button type='button'>Изменить пароль</Button>
         <DialogActions>
-            <Button type='button' onClick={handleCloseDialog}>Отмена</Button>
+            <Button  type='button' onClick={handleCloseDialog}>Отмена</Button>
             <button>Ок</button>
         </DialogActions>
     </Form>

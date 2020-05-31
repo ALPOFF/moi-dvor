@@ -1,3 +1,4 @@
+
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.3);
 }
@@ -16,7 +17,7 @@ dialog::backdrop {
 }
 
 .mdl-dialog__actions {
-    padding: 8px 8px 8px 24px;
+    padding: 8px 0px 8px 0px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -26,10 +27,12 @@ dialog::backdrop {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .mdl-dialog__actions > * {
     margin-right: 8px;
+    width: 48%;
     height: 36px;
 }
 
@@ -56,9 +59,18 @@ dialog::backdrop {
     color: rgba(0, 0, 0, 0.54);
 }
 
+
+
 form {
+    margin: 10px;
+    .photo-card {
+        margin-bottom: 30px; 
+    }
+
     h2 {
         color: #1e1e1e;
+        font-size: 14px;
+        align-self: center;
     }
 
     button {
@@ -67,30 +79,34 @@ form {
     }
 
     input {
-        height: 30px;
-        width: 150px;
-        margin: 0 10px;
+        padding: 4px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        width: 100%;
     }
 
-    .address {
-        display: flex;
-        align-items: center;
-        input {
-            height: 30px;
-            width: 110px;
-            margin: 0 10px;
-        }
-        .addressItem {
-            display: flex;
-            flex-direction: column;
-        }
-        .phoneAuto {
-            display: flex;
-            flex-direction: column;
-        }
-    }
+    // 
     .InteresCont {
         width: 42px!important;
     }
 }
 
+.formItems {
+    margin-right: 20px;
+}
+
+.intersts-card {
+    padding: 8px 0 8px 0;
+}   
+
+.user-image-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.personPhoto:hover {
+    cursor: pointer;
+
+    // вот тут в js при наводке затеняем и открываем окно выбора фото
+}

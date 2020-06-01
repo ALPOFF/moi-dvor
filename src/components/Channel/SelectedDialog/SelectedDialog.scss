@@ -7,9 +7,10 @@ p {
 
     display: flex;
     flex-direction: column;
-    position: relative;
     background-color: white;
     height: 100%;
+    max-height: 800px;
+
     border: 1px solid lightgrey;
     overflow: scroll;
 
@@ -39,11 +40,12 @@ p {
 
         display: flex;
         flex-direction: column;
+        overflow: scroll;
         padding-left: 2px;
 
         .message-placeholder {
             display: flex;
-            margin-top: 25px;
+            margin-top: 5px;
             margin-left: 15px;
 
             img {
@@ -57,25 +59,6 @@ p {
                 display: flex;
                 flex-direction: column;
 
-                header {
-                    margin-left: 10px;
-                    display: flex;
-
-                    h5 {
-                        align-self: center;
-                        margin: 5px;
-                        font-size: 16px;
-                        color: rgba(84, 89, 77, 0.9);
-                    }
-
-                    p{
-                        align-self: center;
-                        color: #7A8074;
-                        margin: 5px;
-                        font-size: 14px;
-                        padding-top: 3px;
-                    }
-                }
 
                 section.community {
                     margin-top: 6px;
@@ -87,6 +70,28 @@ p {
             }
         }
 
+
+        header {
+            margin-top: 7px;
+            margin-left: 20px;
+            display: flex;
+
+            h5 {
+                align-self: center;
+                margin: 5px;
+                margin-left: 0;
+                font-size: 14px;
+                color: rgba(84, 89, 77, 0.9);
+            }
+
+            p{
+                align-self: center;
+                color: #7A8074;
+                margin: 5px;
+                font-size: 14px;
+                padding-top: 3px;
+            }
+        }
 
     }
 }
@@ -108,26 +113,31 @@ p {
     margin-top: 0;
 }
 footer {
-    position: absolute;
     bottom: 0;
     margin: 0;
     form {
         width: 100%;
-
         textarea {
             margin: 0;
             width: 100%;
             box-sizing: border-box;
+            padding: 17px;
             border-color:  rgba(204, 204, 204, 0.5);
             resize: none;
             margin-bottom: -4px;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
+            font-size: 16px;
+            color: #7A8074;
         }
-
-
     }
+
+    .dialog-button {
+        width: 100%;
+    }
+
 }
+
 
 ::-webkit-input-placeholder {
     padding: 16px;

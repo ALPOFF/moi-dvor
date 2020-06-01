@@ -67,6 +67,7 @@ class SelectedDialog extends Component {
 
                     {this.state.chndlg.map(m =>
                         <div className="global-comment-wrapper">
+
                             <header className="username">
                                 <h5>
                                     {m.user.first_name}
@@ -96,13 +97,14 @@ class SelectedDialog extends Component {
                         </div>
                     )}
 
+
+                </main>
                 <footer>
                     <form onSubmit={this.handleSubmit}>
                         <textarea placeholder="Введите сообщение" onChange={this.handleChange} value={this.state.msgData} cols="100" rows="5" />
-                        <input type="submit" value="Send" />
+                        <input className="dialog-button" type="submit" value="Send" />
                     </form>
                 </footer>
-                </main>
 
                 {/* <h4>Selected dialog Title</h4>
             <div>Selected dialog</div> */}

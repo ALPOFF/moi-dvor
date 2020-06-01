@@ -11,8 +11,7 @@ body {
 
 input[type="submit"] {
   align-self: center;
-  margin: 5px 10px;
-  margin-right: 0;
+  margin: none;
   padding: 5px 15px;
   color: #6b6b6b;
   border: 1px solid rgb(211, 211, 211);
@@ -60,3 +59,4 @@ ul, ol {
 .dodogerblue {
   color: dodgerblue;
 }
+

@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import './SelectedDialog.scss'
 import axios from "axios";
-import {withRouter} from "react-router-dom";
-import {connect} from "react-redux";
-import {setUserId} from "../../../state/app-reducer";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { setUserId } from "../../../state/app-reducer";
 
 class SelectedDialog extends Component {
     constructor(props) {
@@ -24,60 +24,62 @@ class SelectedDialog extends Component {
         if (this.props.match.params.dialogId !== this.state.dialogId) {
             axios.get(`http://185.12.95.84:4444/dialogs/${dialogId}`).then(u => {
                 console.log('dialog here:', u.data);
-                this.setState({chndlg: u.data})
-                this.setState({dialogId: this.props.match.params.dialogId})
+                this.setState({ chndlg: u.data })
+                this.setState({ dialogId: this.props.match.params.dialogId })
             })
         }
     }
 
     componentDidMount() {
         //let dialogId = this.props.match.params.dialogId;
-        this.setState({dialogId: this.props.match.params.dialogId})
+        this.setState({ dialogId: this.props.match.params.dialogId })
         console.log(this.props.match.params.dialogId);
         axios.get(`http://185.12.95.84:4444/dialogs/${this.props.match.params.dialogId}`).then(u => {
             console.log('dialog here:', u.data);
-            this.setState({chndlg: u.data})
+            this.setState({ chndlg: u.data })
             console.log(this.state.chndlg)
         })
     }
 
-    handleSubmit (event) {
+    handleSubmit(event) {
 
-        axios.post(`http://185.12.95.84:4444/message`, {user_id: this.props.userId, dialog_id: this.state.dialogId, message: this.state.msgData}).then(u => {
+        axios.post(`http://185.12.95.84:4444/message`, { user_id: this.props.userId, dialog_id: this.state.dialogId, message: this.state.msgData }).then(u => {
             console.log('otvet:', u.data)
         })
         event.preventDefault();
     }
 
-    handleChange (event) {
+    handleChange(event) {
         console.log('txt', this.props.userId)
         console.log('dialog_id', this.state.dialogId)
         console.log('msg', this.state.msgData)
-        this.setState({msgData: event.target.value})
+        this.setState({ msgData: event.target.value })
     }
 
     render() {
         return (
             <div className="dialog-tab-wrapper">
-                {this.state.chndlg.map(m =>
+                <header className="main">
+                    <h4>tests</h4>
+                    {/* {m.name} */}
+                </header>
                 <main className="dialog-container">
-                    <header className="main">
-                        <h4>{m.name}</h4>
-                    </header>
 
+                    {this.state.chndlg.map(m =>
                         <div className="global-comment-wrapper">
+                            <header className="username">
+                                <h5>
+                                    {m.user.first_name}
+                                    {' ' + m.user.last_name}
+                                </h5>
+                                <p className="time">4ч.</p>
+                            </header>
                             <div className="message-placeholder">
                                 <img
                                     src="https://www.coachcarson.com/wp-content/uploads/2018/09/Chad-Profile-pic-circle.png"
-                                    alt=""/>
+                                    alt="" />
                                 <div className="msg-info">
-                                    <header className="username">
-                                        <h5>
-                                            {m.user.first_name}
-                                            {' ' + m.user.last_name}
-                                        </h5>
-                                        <p className="time">4ч.</p>
-                                    </header>
+
                                     <section className="community">
                                         <p>Сообщество автолюбителей</p>
                                     </section>
@@ -88,18 +90,20 @@ class SelectedDialog extends Component {
                                     <div>
                                         {m.message}
                                     </div>
-                                    <span style={{fontSize: 12}}>{m.datetime}</span>
+                                    <span style={{ fontSize: 12 }}>{m.datetime}</span>
                                 </p>
                             </div>
                         </div>
+                    )}
 
-                </main>   )}
                 <footer>
                     <form onSubmit={this.handleSubmit}>
-                        <textarea placeholder="Введите сообщение"  onChange={this.handleChange} value={this.state.msgData} cols="100" rows="5"/>
+                        <textarea placeholder="Введите сообщение" onChange={this.handleChange} value={this.state.msgData} cols="100" rows="5" />
                         <input type="submit" value="Send" />
                     </form>
                 </footer>
+                </main>
+
                 {/* <h4>Selected dialog Title</h4>
             <div>Selected dialog</div> */}
             </div>

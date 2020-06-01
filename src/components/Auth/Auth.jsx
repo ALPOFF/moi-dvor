@@ -5,6 +5,8 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {setUserId} from "../../state/app-reducer";
 import {Redirect} from "react-router-dom";
+import authPng from './../../assets/images/auth.jpg'
+import logoD from './../../assets/images/logoD.png'
 
 const Login = (props) => {
     const [telephone, setTel] = useState("");
@@ -27,32 +29,37 @@ const Login = (props) => {
     if (props.userId !== null) return <Redirect to={"/channels"}/>
     return (
         <div className="Login">
-            <form onSubmit={handleSubmit}>
-                <FormGroup controlId="email" bsSize="large">
-                    <h3>Логин</h3>
-                    <FormControl
-                        autoFocus
-                        type='tel'
-                        value={telephone}
-                        placeholder="Введите ваш телефон"
-                        onChange={e =>
-                            setTel(e.target.value)
-                        }
-                    />
-                </FormGroup>
-                <FormGroup controlId="password" bsSize="large">
-                    <h3>Пароль</h3>
-                    <FormControl
-                        value={password}
-                        placeholder="Введите ваш пароль"
-                        onChange={e => setPassword(e.target.value)}
-                        type="password"
-                    />
-                </FormGroup>
-                <Button block bsSize="large" disabled={!validateForm()} type="submit">
-                    Войти
-                </Button>
-            </form>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <img src={logoD} alt="logoD" height={100} width={110}/>
+                <form onSubmit={handleSubmit}>
+                    <FormGroup controlId="email" bsSize="large">
+                        <h3 style={{paddingBottom: 10, paddingTop: 5}}>Логин</h3>
+                        <FormControl
+                            autoFocus
+                            type='tel'
+                            value={telephone}
+                            placeholder="Введите ваш телефон"
+                            onChange={e =>
+                                setTel(e.target.value)
+                            }
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="password" bsSize="large">
+                        <h3 style={{paddingBottom: 10, paddingTop: 5}}>Пароль</h3>
+                        <FormControl
+                            value={password}
+                            placeholder="Введите ваш пароль"
+                            onChange={e => setPassword(e.target.value)}
+                            type="password"
+                        />
+                    </FormGroup>
+                    <Button block bsSize="large" disabled={!validateForm()} type="submit" style={{marginTop: 20, backgroundColor: '#90C572', outline: 'none'}}>
+                        Войти
+                    </Button>
+                </form>
+            </div>
+
+            <img src={authPng} alt="authPng" style={{height: '65%'}}/>
         </div>
     );
 };

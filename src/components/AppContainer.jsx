@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Header from "./Header/Header";
 import Channel from "./Channel/Channel";
 import ChannelDialogs from "./Channel/ChannelDialogs/ChannelDialogs";
@@ -7,8 +7,11 @@ import NeighborsContainer from "./Neighbors/NeighborsContainer";
 import Profile from "./Neighbors/Profile/Profile";
 import {Redirect, Route} from "react-router-dom";
 import {connect} from "react-redux";
+import axios from "axios";
 
 const AppContainer = (props) => {
+
+
     if (props.userId === null) return <Redirect to={"/auth"}/>
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>

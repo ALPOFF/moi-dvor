@@ -52,7 +52,7 @@ class Header extends Component {
             let newInterestArr = []
             this.props.userProfileInt.forEach(o => newInterestArr.push(o.value))
             console.log('from selector', formData.val)
-            // if (formData.val != undefined)
+             if (formData.val != undefined) {
                 formData.val.forEach(t => newInterestArr.push(t.value))
             console.log(newInterestArr)
             axios.post(`http://185.12.95.84:4444/user/interests`, {
@@ -62,6 +62,7 @@ class Header extends Component {
                 console.log('otvetNaInter', u.data);
                 this.props.setUserProfileInt(this.props.userProfileInt.concat(formData.val))
             });
+             }
 
         };
 

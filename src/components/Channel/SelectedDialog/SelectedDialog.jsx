@@ -11,10 +11,17 @@ class SelectedDialog extends Component {
         this.state = {
             chndlg: [],
             dialogId: null,
-            msgData: ''
+            msgData: '',
+            votes_yes: [],
+            votes_no: [],
+            channel_id: 0,
+            vote: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.handleChangeVotes = this.handleChangeVotes.bind(this);
+        this.handleSubmitVotes = this.handleSubmitVotes.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -39,6 +46,13 @@ class SelectedDialog extends Component {
             this.setState({ chndlg: u.data })
             console.log(this.state.chndlg)
         })
+        axios.get(`http://185.12.95.84:4444/dialogs/vote/${this.props.match.params.dialogId}`).then(u => {
+            console.log('dialog here:', u.data);
+            this.setState({ votes_yes: u.data.user_ids_yes })
+            this.setState({ votes_no: u.data.user_ids_no })
+            this.setState({ channel_id: u.data.channel_id })
+            console.log(this.state.votes_no, this.state.channel_id)
+        })
     }
 
     handleSubmit(event) {
@@ -56,12 +70,55 @@ class SelectedDialog extends Component {
         this.setState({ msgData: event.target.value })
     }
 
+
+    handleSubmitVotes(event) {
+        console.log("current vote: " + this.state.vote);
+
+        axios.post(`http://185.12.95.84:4444/vote/user`, {
+            user_id: this.props.userId,
+            dialog_id: this.state.dialogId,
+            vote: this.state.vote
+        }
+        ).then(u => {
+            console.log('otvet:', u.data)
+        })
+        event.preventDefault();
+    }
+
+    handleChangeVotes(event) {
+        console.log('on vote change: ', event.target.id)
+        this.setState({ vote: event.target.id })
+    }
+
+
     render() {
         return (
             <div className="dialog-tab-wrapper">
                 <header className="main">
                     <h4>tests</h4>
                     {/* {m.name} */}
+                    {this.state.channel_id == 3 && <section>
+                        <div className="votes">
+
+                            <form className="vote-form" onSubmit={this.handleSubmitVotes} action=""
+                            >
+
+                                <div className="">
+                                    <p>votes_yes: {this.state.votes_yes}</p>
+                                    <input onChange={this.handleChangeVotes} id="1" type="radio" name="vote" value="Plus" checked />
+                                </div>
+                                <div className="">
+                                <p>votes_no: {this.state.votes_no}</p>
+                                <input onChange={this.handleChangeVotes} id="0" type="radio" name="vote" value="Minus" />
+                                </div>
+
+
+                                <input type="submit" value="проголосовать" />
+
+                            </form>
+                        </div>
+                    </section>
+                    }
                 </header>
                 <main className="dialog-container">
 
@@ -73,7 +130,9 @@ class SelectedDialog extends Component {
                                     {m.user.first_name}
                                     {' ' + m.user.last_name}
                                 </h5>
+                                {this.prop}
                                 <p className="time">4ч.</p>
+
                             </header>
                             <div className="message-placeholder">
                                 <img

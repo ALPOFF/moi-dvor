@@ -31,7 +31,6 @@ const Channel = () => {
                     <img src={plus} alt="add-new-channel"/>
                 </header>
                 <List className="channel" style={{ width: '300px' }}>
-
                     {chnlist.map(c => <NavLink  to={"/channels/" + c.id}>
                         <ListItem  style={{margin: '25px 0'}} className="menu-item">
                             <ListItemContent><span style={{ color: c.color, padding: '10px 20px' }}>#</span>{c.name}</ListItemContent>
@@ -41,10 +40,6 @@ const Channel = () => {
 
                 </List>
             </div>
-
-
-
-
         </div>
 
     )

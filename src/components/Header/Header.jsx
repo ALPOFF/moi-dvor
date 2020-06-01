@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import './Header.scss'
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Profile from "../Neighbors/Profile/Profile";
 import ProfileWindow from "../ProfileWindow/ProfileWindow";
@@ -12,6 +12,8 @@ import bell from '../../assets/images/header-images/bell.png';
 import {Dialog} from "react-mdl";
 import ProfileReduxForm from "../ProfileReduxForm";
 import {connect} from "react-redux";
+import axios from "axios";
+import {setUserProfileInt} from "../../state/app-reducer";
 
 class Header extends Component {
     constructor(props) {
@@ -37,14 +39,23 @@ class Header extends Component {
         });
     }
 
-
-
     render() {
         const onSubmitTask = (formData) => {
-            console.log(11111)
             console.log(formData)
-            //this.props.setTask(formData.taskName, formData.idWorker, formData.description, formData.deadline, formData.taskAddress)
+            let newInterestArr = []
+            this.props.userProfileInt.forEach(o => newInterestArr.push(o.value))
+            console.log('from selector', formData.val)
+            formData.val.forEach(t => newInterestArr.push(t.value))
+            axios.post(`http://185.12.95.84:4444/user/interests`, {
+                interests: newInterestArr,
+                user_id: this.props.userId
+            }).then(u => {
+                console.log('otvetNaInter', u.data);
+            });
+            this.props.setUserProfileInt(this.props.userProfileInt.concat(formData.val))
         };
+
+
         return (
             <div className="header">
                 <div className="tabs-wrapper">
@@ -81,7 +92,7 @@ class Header extends Component {
                         </div>
                         <button className="inline-block" onClick={this.handleOpenDialog}>Профиль</button>
                         <Dialog open={this.state.openDialog}>
-                            <ProfileReduxForm y={this.props.userProfile} w={this.props.interestsOut} upi={this.props.userProfileInt}
+                            <ProfileReduxForm userProfile={this.props.userProfile} w={this.props.interestsOut} upi={this.props.userProfileInt}
                                               onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
                         </Dialog>
                     </div>
@@ -106,8 +117,9 @@ let mapStateToProps = (state) => {
         userProfileInt: state.appReducer.userProfileInt,
         userProfile: state.appReducer.userProfile,
         interests: state.appReducer.interests,
-        interestsOut: state.appReducer.interestsOut
+        interestsOut: state.appReducer.interestsOut,
+        userId: state.appReducer.userId
     }
 }
 
-export default connect(mapStateToProps, {})(Header);
+export default connect(mapStateToProps, {setUserProfileInt})(Header);

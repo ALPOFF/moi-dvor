@@ -1,21 +1,23 @@
 const SET_USER_PROFILE_INT = 'app/SET_USER_PROFILE_INT';
 const SET_USER_PROFILE_BY_ID = 'app/SET_USER_PROFILE_BY_ID';
 const SET_ALL_INTERESTS = 'app/SET_ALL_INTERESTS';
-const INT_OUT = 'app/INT_OUT'
+const INT_OUT = 'app/INT_OUT';
+const SET_USER_ID = 'app/SET_USER_ID';
 
 let initialState = {
     userProfileInt: [],
     userProfile: [],
     interests: [],
-    interestsOut: []
+    interestsOut: [],
+    userId: null
 };
 
 function arrayDiffByKey(key, ...arrays) {
-    return [].concat(...arrays.map( (arr, i) => {
+    return [].concat(...arrays.map((arr, i) => {
         const others = arrays.slice(0);
         others.splice(i, 1);
         const unique = [...new Set([].concat(...others))];
-        return arr.filter( x =>
+        return arr.filter(x =>
             !unique.some(y => x[key] === y[key])
         );
     }));
@@ -27,7 +29,7 @@ const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 userProfileInt: action.userProfileInt,
-                interestsOut:  arrayDiffByKey('value', action.userProfileInt, state.interests)
+                interestsOut: arrayDiffByKey('value', action.userProfileInt, state.interests)
             };
         case SET_USER_PROFILE_BY_ID:
             return {
@@ -38,6 +40,11 @@ const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 interests: action.interests
+            };
+        case SET_USER_ID:
+            return {
+                ...state,
+                userId: action.userId
             };
         default:
             return state;
@@ -69,6 +76,13 @@ export const intOut = (interestsOut) => {
     return {
         type: INT_OUT,
         interestsOut
+    }
+};
+
+export const setUserId = (userId) => {
+    return {
+        type: SET_USER_ID,
+        userId
     }
 };
 

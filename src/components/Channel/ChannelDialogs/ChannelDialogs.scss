@@ -29,8 +29,8 @@
         //     padding: 10px;
         //     display: inline-block;
         //     margin-right: 12px;
-        //     height: 30px;      
-        //     align-self: center;      
+        //     height: 30px;
+        //     align-self: center;
         // }
 
 
@@ -50,18 +50,18 @@
         font-size: 20px;
 
         overflow: auto;
-    
+
         background-color: white;
         border: 1px solid lightgrey;
         flex: 20;
 
         .threads-list-item{
-            
+
 
             header {
-                
+
             }
-        
+
         }
     }
 }
@@ -78,7 +78,7 @@
     display: flex;
     background-color:#DC5DA9;
     margin: 0 22px;
-    width: 167px;
+    //width: 167px;
     border-radius: 45px;
     font-size: 14px;
     justify-content: center;
@@ -89,7 +89,7 @@
 
 hr { display: block; height: 1px;
     border: 0; border-top: 1px solid rgba(204, 204, 204, 0.5);
-    margin: 1em 0; padding: 0; 
+    margin: 1em 0; padding: 0;
     margin-right: 10px;
 }
 
@@ -135,7 +135,7 @@ hr { display: block; height: 1px;
                 display: flex;
                 margin-right: 40px;
                 align-self: center;
-                
+
                 label {
                     margin-right: 10px;
                     align-self: center;
@@ -162,7 +162,7 @@ hr { display: block; height: 1px;
         }
 
         section.interests {
-            
+
         }
 
         .under {
@@ -185,8 +185,8 @@ hr { display: block; height: 1px;
         padding: 10px;
         display: inline-block;
         margin-right: 12px;
-        height: 30px; 
-        
+        height: 30px;
+
         // @todo запинить в конец с фелк
     }
 }

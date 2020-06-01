@@ -43,7 +43,6 @@ class Profile extends Component {
         })
     }
 
-
     render() {
         return (
             <div className="profileWrapper">
@@ -66,7 +65,10 @@ class Profile extends Component {
                          <span className="Interes">
                              <h4 style={{paddingRight: 10}}>Интересы: </h4>
                             {this.state.user_info.interests.length !== 0 ? this.state.user_info.interests.map(i =>
-                                <Interes label={i.name}/>) : <h4> Отсутствуют</h4>}
+
+                                    <Interes int_info={i}/>
+
+                                ) : <h4> Отсутствуют</h4>}
                         </span>
                         </div>
                     </div> : <h1>Loading</h1>}

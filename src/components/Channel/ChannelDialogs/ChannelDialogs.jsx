@@ -32,7 +32,7 @@ class ChannelDialogs extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.match.params.channelId !== this.state.channelId) {
-            axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs/${3}`).then(u => {
+            axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs/${this.props.userId}`).then(u => {
                 this.setState({chndlg: u.data})
                 this.setState({channelId: this.props.match.params.channelId})
                 console.log('DIDUP', this.state.chndlg)
@@ -46,7 +46,7 @@ class ChannelDialogs extends Component {
         this.setState({channelId: this.props.match.params.channelId})
         console.log('CH_ID:', this.state.channelId)
         console.log(this.props.match.params.channelId);
-        axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs`).then(u => {
+        axios.get(`http://185.12.95.84:4444/channels/${this.props.match.params.channelId}/dialogs/${this.props.userId}`).then(u => {
             this.setState({chndlg: u.data})
             console.log(this.state.chndlg)
         });
@@ -154,7 +154,8 @@ class ChannelDialogs extends Component {
 }
 
 let mapStateToProps = (state) => ({
-    userProfileInt: state.appReducer.userProfileInt
+    userProfileInt: state.appReducer.userProfileInt,
+    userId: state.appReducer.userId
 })
 
 

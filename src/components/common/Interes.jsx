@@ -16,6 +16,7 @@ const Interes = (props) => {
         console.log('IDшник', event.target.id)
         let newArrInt = props.userProfileInt.filter(g => g.value != event.target.id)
         console.log('newArrInt', newArrInt)
+        console.log(props.userId)
         props.setUserProfileInt(newArrInt)
         axios.post(`http://185.12.95.84:4444/user/interests`, {interests: newArrInt.map(t => t.value), user_id: props.userId}).then(u => {
             console.log(u.data)

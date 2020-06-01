@@ -13,7 +13,7 @@ import {Dialog} from "react-mdl";
 import ProfileReduxForm from "../ProfileReduxForm";
 import {connect} from "react-redux";
 import axios from "axios";
-import {setUserProfileInt} from "../../state/app-reducer";
+import {setUserProfileById, setUserProfileInt} from "../../state/app-reducer";
 
 class Header extends Component {
     constructor(props) {
@@ -24,7 +24,14 @@ class Header extends Component {
     }
 
     componentDidMount() {
-
+        axios.get(`http://185.12.95.84:4444/user/${this.props.userId}`).then(u => {
+            console.log('uinfo', u.data);
+            let newInterestArr = []
+            u.data.interests.forEach(i => newInterestArr.push({'label': i.name, value: i.id, }))
+            this.props.setUserProfileInt(newInterestArr)
+            console.log("USER INTERESTS:", newInterestArr)
+            this.props.setUserProfileById(u.data)
+        })
     }
 
     handleOpenDialog() {
@@ -45,16 +52,18 @@ class Header extends Component {
             let newInterestArr = []
             this.props.userProfileInt.forEach(o => newInterestArr.push(o.value))
             console.log('from selector', formData.val)
-            formData.val.forEach(t => newInterestArr.push(t.value))
+            // if (formData.val != undefined)
+                formData.val.forEach(t => newInterestArr.push(t.value))
+            console.log(newInterestArr)
             axios.post(`http://185.12.95.84:4444/user/interests`, {
                 interests: newInterestArr,
                 user_id: this.props.userId
             }).then(u => {
                 console.log('otvetNaInter', u.data);
+                this.props.setUserProfileInt(this.props.userProfileInt.concat(formData.val))
             });
-            this.props.setUserProfileInt(this.props.userProfileInt.concat(formData.val))
-        };
 
+        };
 
         return (
             <div className="header">
@@ -96,16 +105,6 @@ class Header extends Component {
                                               onSubmit={onSubmitTask} handleCloseDialog={this.handleCloseDialog}/>
                         </Dialog>
                     </div>
-
-                    {/*<div className="nav-item header-element profile-container" to="/profile">*/}
-                    {/*    <div className="inline-block">*/}
-                    {/*        <div className="circle">*/}
-                    {/*            <div className="circle-item">A</div>*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*    <div className="inline-block">Профиль</div>*/}
-                    {/*</div>*/}
-
                 </div>
             </div>
         )
@@ -122,4 +121,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {setUserProfileInt})(Header);
+export default connect(mapStateToProps, {setUserProfileInt, setUserProfileById})(Header);

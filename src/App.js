@@ -22,14 +22,6 @@ const App = (props) => {
             props.setAllInterests(interests)
             console.log('LLL', interests[0])
         })
-        axios.get(`http://185.12.95.84:4444/user/3`).then(u => {
-            console.log('uinfo', u.data);
-            let newInterestArr = []
-            u.data.interests.forEach(i => newInterestArr.push({'label': i.name, value: i.id, }))
-            props.setUserProfileInt(newInterestArr)
-            props.setUserProfileById(u.data)
-        })
-
     }, []);
 
     return (

@@ -36,7 +36,7 @@ const ProfileRedux = ({handleSubmit, handleCloseDialog, w, upi, userProfile}) =>
                 <div className="addressItem">
                     <h2>Дом</h2>
                     <div className="formItems">
-                        <Field placeholder={userProfile.address_id.house_number} name={"house-number"} component={"input"} />
+                        {userProfile.address_id != undefined && <Field placeholder={userProfile.address_id.house_number} name={"house-number"} component={"input"} />}
                     </div>
                 </div>
                 <div>
